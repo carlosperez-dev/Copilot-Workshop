@@ -17,7 +17,9 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 // ADD NEW ENDPOINTS HERE
-
+// Edit this endpoint to take in two dates and subtract it to get the difference in days.
+app.MapGet("/date-diff", (DateTime start, DateTime end) => (end - start).TotalDays);
+app.MapGet("/", () => "Hello World!");
 app.Run();
 
 // Needed to be able to access this type from the MinimalAPI.Tests project.
